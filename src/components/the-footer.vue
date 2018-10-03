@@ -1,0 +1,21 @@
+<template>
+  <footer id="footer">
+    <div class="inner">
+      <section class="credits">
+        <span class="credits-theme">
+          Design based on <a href="https://github.com/zutrinken/attila">Attila</a>
+          by <a href="http://zutrinken.com" rel="nofollow">zutrinken</a>
+        </span>
+        <span class="credits-software">
+          Published with <a href="http://kenticocloud.com">Kentico Cloud</a>
+        </span>
+      </section>
+    </div>
+  </footer>
+</template>
+
+<script>
+export default {
+  name: 'the-main-navigation'
+}
+</script>
