@@ -2,7 +2,7 @@
   <span class="post-meta">
     <base-link-author :slug="author.slug">{{ author.name }}</base-link-author>
     <template v-if="activities && activities.length > 0">
-      in
+      |
     </template>
     <base-link-activity
       v-for="(activity, index) in activities"
@@ -44,9 +44,8 @@ export default {
     displayDate: function () {
       const options = {
         weekday: 'long',
-        month: 'short',
+        month: 'long',
         day: 'numeric',
-        year: 'numeric',
         timeZone: 'UTC'
       }
 
