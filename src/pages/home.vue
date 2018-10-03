@@ -27,7 +27,17 @@ export default {
           author: {
             name: 'John Smith',
             slug: 'john-smith'
-          }
+          },
+          activities: [
+            {
+              name: 'Hiking',
+              slug: 'hiking'
+            },
+            {
+              name: 'Sightseeing',
+              slug: 'sightseeing'
+            }
+          ]
         }, {
           id: 2,
           title: 'Post Title',
@@ -37,7 +47,13 @@ export default {
           author: {
             name: 'John Smith',
             slug: 'john-smith'
-          }
+          },
+          activities: [
+            {
+              name: 'Hiking',
+              slug: 'hiking'
+            }
+          ]
         }, {
           id: 3,
           title: 'Post Title',
@@ -47,7 +63,8 @@ export default {
           author: {
             name: 'John Smith',
             slug: 'john-smith'
-          }
+          },
+          activities: []
         }]
     }
   }

@@ -24,6 +24,12 @@ export default new Router({
       name: 'author-detail',
       props: true,
       component: () => import('./pages/author-detail.vue')
+    },
+    {
+      path: '/go/:slug',
+      name: 'activity-detail',
+      props: true,
+      component: () => import('./pages/activity-detail.vue')
     }
   ]
 })
