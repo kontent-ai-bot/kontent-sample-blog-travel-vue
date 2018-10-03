@@ -1,6 +1,6 @@
 <template>
   <span class="post-meta">
-    <a href="#">{{author.name}}</a>
+    {{author.name}}
     <template v-if="date">
       |
       <time v-if="date" :datetime="date.toISOString()">{{ displayDate }}</time>
