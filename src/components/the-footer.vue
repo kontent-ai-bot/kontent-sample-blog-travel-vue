@@ -16,6 +16,6 @@
 
 <script>
 export default {
-  name: 'the-main-navigation'
+  name: 'the-footer'
 }
 </script>
