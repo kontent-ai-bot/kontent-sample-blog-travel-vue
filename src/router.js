@@ -12,6 +12,18 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/blog/:year/:month/:date/:slug',
+      name: 'post-detail',
+      props: true,
+      component: () => import('./pages/post-detail.vue')
+    },
+    {
+      path: '/by/:slug',
+      name: 'author-detail',
+      props: true,
+      component: () => import('./pages/author-detail.vue')
     }
   ]
 })

@@ -3,7 +3,13 @@
     <div class="inner">
       <header class="post-header">
         <h2 class="post-title">
-          <a href="#">{{post.title}}</a>
+          <base-post-link
+            :published="post.published"
+            :slug="post.slug"
+            :post="post"
+          >
+            {{post.title}}
+          </base-post-link>
         </h2>
         <base-post-meta
           :author="post.author"
@@ -19,10 +25,12 @@
 </template>
 
 <script>
+import BasePostLink from './base-post-link'
 import BasePostMeta from './base-post-meta'
 
 export default {
   components: {
+    BasePostLink,
     BasePostMeta
   },
   props: {

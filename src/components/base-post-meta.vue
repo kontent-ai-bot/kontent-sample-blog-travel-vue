@@ -1,6 +1,7 @@
 <template>
   <span class="post-meta">
-    {{author.name}}
+    <base-author-link :slug="author.slug">{{ author.name }}</base-author-link>
+
     <template v-if="date">
       |
       <time v-if="date" :datetime="date.toISOString()">{{ displayDate }}</time>
@@ -9,8 +10,13 @@
 </template>
 
 <script>
+import BaseAuthorLink from './base-author-link'
+
 export default {
   name: 'base-post-meta',
+  components: {
+    BaseAuthorLink
+  },
   props: {
     author: {
       type: Object,

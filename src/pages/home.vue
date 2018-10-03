@@ -1,7 +1,7 @@
 <template>
   <div class="home-template">
     <the-header-home />
-    <post-list />
+    <post-list :posts="posts" />
   </div>
 </template>
 
@@ -14,6 +14,42 @@ export default {
   components: {
     PostList,
     TheHeaderHome
+  },
+  data: function () {
+    return {
+      posts: [
+        {
+          id: 1,
+          title: 'Post Title',
+          slug: 'post-slug',
+          excerpt: 'Post Excerpt',
+          published: new Date(Date.now()),
+          author: {
+            name: 'John Smith',
+            slug: 'john-smith'
+          }
+        }, {
+          id: 2,
+          title: 'Post Title',
+          slug: 'post-slug',
+          excerpt: 'Post Excerpt',
+          published: new Date(Date.now()),
+          author: {
+            name: 'John Smith',
+            slug: 'john-smith'
+          }
+        }, {
+          id: 3,
+          title: 'Post Title',
+          slug: 'post-slug',
+          excerpt: 'Post Excerpt',
+          published: new Date(Date.now()),
+          author: {
+            name: 'John Smith',
+            slug: 'john-smith'
+          }
+        }]
+    }
   }
 }
 </script>

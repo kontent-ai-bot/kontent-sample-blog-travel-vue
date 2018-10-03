@@ -25,39 +25,10 @@ export default {
   components: {
     PostListItem
   },
-  data: function () {
-    return {
-      posts: [{
-        id: 1,
-        title: 'Post Title',
-        excerpt: 'Post Excerpt',
-        published: new Date(Date.now()),
-        author: {
-          name: 'John Smith',
-          slug: 'john-smith'
-        },
-        slug: 'post-slug'
-      }, {
-        id: 2,
-        title: 'Post Title',
-        excerpt: 'Post Excerpt',
-        published: new Date(Date.now()),
-        author: {
-          name: 'John Smith',
-          slug: 'john-smith'
-        },
-        slug: 'post-slug'
-      }, {
-        id: 3,
-        title: 'Post Title',
-        excerpt: 'Post Excerpt',
-        published: new Date(Date.now()),
-        author: {
-          name: 'John Smith',
-          slug: 'john-smith'
-        },
-        slug: 'post-slug'
-      }]
+  props: {
+    posts: {
+      type: Array,
+      required: true
     }
   }
 }
