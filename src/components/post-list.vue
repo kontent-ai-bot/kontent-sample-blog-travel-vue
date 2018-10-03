@@ -8,13 +8,6 @@
       role="main"
       style="min-height: 75px"
     >
-      <div
-        class="post"
-        v-if="posts.length == 0"
-      >
-        <div class="inner">No posts found.</div>
-      </div>
-
       <post-list-item
         v-for="post in posts"
         :key="post.id"
@@ -35,6 +28,7 @@ export default {
   data: function () {
     return {
       posts: [{
+        id: 1,
         title: 'Post Title',
         excerpt: 'Post Excerpt',
         published: new Date(Date.now()),
@@ -44,6 +38,7 @@ export default {
         },
         slug: 'post-slug'
       }, {
+        id: 2,
         title: 'Post Title',
         excerpt: 'Post Excerpt',
         published: new Date(Date.now()),
@@ -53,6 +48,7 @@ export default {
         },
         slug: 'post-slug'
       }, {
+        id: 3,
         title: 'Post Title',
         excerpt: 'Post Excerpt',
         published: new Date(Date.now()),
