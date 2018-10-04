@@ -1,6 +1,6 @@
 <template>
   <div class="home-template">
-    <the-header-home />
+    <the-header-home :name="blogName" :description="blogDescription" :cover-image-url="defaultCoverImageUrl" />
     <post-list :posts="posts" />
   </div>
 </template>
@@ -65,7 +65,10 @@ export default {
             slug: 'john-smith'
           },
           activities: []
-        }]
+        }],
+      blogName: 'Title',
+      blogDescription: 'Description',
+      defaultCoverImageUrl: 'https://source.unsplash.com/random/1920x900?journal'
     }
   }
 }
