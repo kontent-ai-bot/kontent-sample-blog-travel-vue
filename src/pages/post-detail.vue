@@ -1,7 +1,7 @@
 <template>
   <div class="post-template">
     <the-header-generic :title="post.title" :cover-image-url="post.featureImageUrl">
-      <base-post-meta :author="post.author" :date="post.published" />
+      <post-meta :author="post.author" :date="post.published" :activities="post.activities" />
     </the-header-generic>
     <base-layout-page>
       <div v-html="post.body"></div>

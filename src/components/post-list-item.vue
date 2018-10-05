@@ -30,6 +30,7 @@ import BaseLinkPost from './base-link-post'
 import PostMeta from './post-meta'
 
 export default {
+  name: 'post-list-item',
   components: {
     BaseLinkPost,
     PostMeta

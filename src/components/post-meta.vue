@@ -14,7 +14,7 @@ import ActivityListInline from './activity-list-inline'
 import BaseLinkAuthor from './base-link-author'
 
 export default {
-  name: 'base-post-meta',
+  name: 'post-meta',
   components: {
     ActivityListInline,
     BaseLinkAuthor

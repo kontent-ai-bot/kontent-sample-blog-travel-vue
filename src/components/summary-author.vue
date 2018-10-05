@@ -23,7 +23,7 @@
 import BaseLinkAuthor from './base-link-author'
 
 export default {
-  name: 'base-summary-author',
+  name: 'summary-author',
   components: {
     BaseLinkAuthor
   },
