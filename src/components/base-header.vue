@@ -12,7 +12,7 @@
         >
           <router-link to="/" class="home-button" title="Home"><i class="ic ic-arrow-left"></i> Home</router-link>
         </span>
-        <!-- <AppNavigationOpenButton /> -->
+        <button-menu />
       </nav>
       <slot/>
     </div>
@@ -20,8 +20,12 @@
 </template>
 
 <script>
+import ButtonMenu from './button-menu'
 export default {
   name: 'base-header',
+  components: {
+    ButtonMenu
+  },
   props: {
     isHome: {
       type: Boolean,
