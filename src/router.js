@@ -7,6 +7,10 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  linkActiveClass: 'active',
+  scrollBehavior (to, from, savedPosition) {
+    return savedPosition || { x: 0, y: 0 }
+  },
   routes: [
     {
       path: '/',
