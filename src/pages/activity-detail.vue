@@ -1,6 +1,6 @@
 <template>
   <div class="tag-template">
-    <the-header-generic :title="activity.title" :subtitle="subtitle" />
+    <the-header-generic :title="activity.title" :subtitle="activity.description" :coverImageUrl="activity.featureImageUrl" />
     <post-list :posts="posts" />
   </div>
 </template>
@@ -19,7 +19,9 @@ export default {
     return {
       activity: {
         title: 'Activity title',
-        slug: 'activity-slug'
+        slug: 'activity-slug',
+        description: 'A brief description goes here',
+        featureImageUrl: 'https://source.unsplash.com/1600x900/?activity'
       },
       posts: [
         {

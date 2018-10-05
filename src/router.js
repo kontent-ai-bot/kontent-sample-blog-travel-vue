@@ -30,6 +30,11 @@ export default new Router({
       component: () => import('./pages/author-detail.vue')
     },
     {
+      path: '/go',
+      name: 'activity-index',
+      component: () => import('./pages/activity-index.vue')
+    },
+    {
       path: '/go/:slug',
       name: 'activity-detail',
       props: true,

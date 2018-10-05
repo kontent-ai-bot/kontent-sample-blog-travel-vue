@@ -22,6 +22,13 @@
           >
             <a>Home</a>
           </router-link>
+          <router-link
+            :to="{ name: 'activity-index' }"
+            role="presentation"
+            tag="li"
+          >
+            <a>Explore by activity</a>
+          </router-link>
         </ul>
       </div>
     </nav>
@@ -62,7 +69,7 @@ export default {
       immediate: true
     },
     '$route': {
-      handler: 'setNavigationClosed'
+      handler: 'setMenuClosed'
     }
   }
 }
