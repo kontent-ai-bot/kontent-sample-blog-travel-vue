@@ -1,20 +1,11 @@
 <template>
-  <div
-    id="index"
-    class="container"
-  >
-    <main
-      class="content"
-      role="main"
-      style="min-height: 75px"
-    >
+    <div class="container">
       <post-list-item
         v-for="post in posts"
         :key="post.id"
         :post="post"
       />
-    </main>
-  </div>
+    </div>
 </template>
 
 <script>

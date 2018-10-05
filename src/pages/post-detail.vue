@@ -3,24 +3,20 @@
     <the-header-generic :title="post.title" :cover-image-url="post.featureImageUrl">
       <base-post-meta :author="post.author" :date="post.published" />
     </the-header-generic>
-    <main class="content" role="main">
-        <article class="post">
-          <div class="inner">
-            <section class="post-content" v-html="post.body"></section>
-
-            <section class="post-info">
-              <buttons-social-sharing :twitter-text="post.title" :url="currentUrl" />
-              <buttons-activities :activities="post.activities" />
-              <div class="clear"></div>
-              <summary-author :author="post.author" />
-            </section>
-          </div>
-        </article>
-    </main>
+    <base-layout-page>
+      <div v-html="post.body"></div>
+      <section class="post-info">
+        <buttons-social-sharing :twitter-text="post.title" :url="currentUrl" />
+        <buttons-activities :activities="post.activities" />
+        <div class="clear"></div>
+        <summary-author :author="post.author" />
+      </section>
+    </base-layout-page>
   </div>
 </template>
 
 <script>
+import BaseLayoutPage from '@/components/base-layout-page'
 import ButtonsActivities from '@/components/buttons-activities'
 import ButtonsSocialSharing from '@/components/buttons-social-sharing'
 import PostMeta from '@/components/post-meta'
@@ -30,6 +26,7 @@ import TheHeaderGeneric from '@/components/the-header-generic'
 export default {
   name: 'post-detail',
   components: {
+    BaseLayoutPage,
     ButtonsActivities,
     ButtonsSocialSharing,
     PostMeta,
