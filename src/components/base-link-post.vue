@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'base-author-link',
+  name: 'base-link-post',
   props: {
     published: {
       type: Date,

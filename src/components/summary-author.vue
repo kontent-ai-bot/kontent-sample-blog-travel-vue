@@ -5,7 +5,7 @@
     </figure>
     <div class="post-author-bio">
       <h4 v-if="showLink" class="post-author-name">
-        <router-link :to="{name: 'author', params: { slug: author.slug }}">{{author.name}}</router-link>
+        <base-link-author :slug="author.slug">{{author.name}}</base-link-author>
       </h4>
       <h2 v-else class="post-author-name">{{author.name}}</h2>
       <p class="post-author-about">{{author.bio}}</p>
@@ -20,8 +20,13 @@
 </template>
 
 <script>
+import BaseLinkAuthor from './base-link-author'
+
 export default {
   name: 'base-summary-author',
+  components: {
+    BaseLinkAuthor
+  },
   props: {
     author: {
       type: Object,

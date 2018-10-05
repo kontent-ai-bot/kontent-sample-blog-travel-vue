@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'base-buttons-social-sharing',
+  name: 'buttons-social-sharing',
   props: {
     twitterText: {
       type: String,

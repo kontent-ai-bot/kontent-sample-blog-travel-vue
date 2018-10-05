@@ -9,10 +9,10 @@
             <section class="post-content" v-html="post.body"></section>
 
             <section class="post-info">
-              <base-buttons-social-sharing :twitter-text="post.title" :url="currentUrl" />
-              <base-buttons-activities :activities="post.activities" />
+              <buttons-social-sharing :twitter-text="post.title" :url="currentUrl" />
+              <buttons-activities :activities="post.activities" />
               <div class="clear"></div>
-              <base-summary-author :author="post.author" />
+              <summary-author :author="post.author" />
             </section>
           </div>
         </article>
@@ -21,19 +21,19 @@
 </template>
 
 <script>
-import BasePostMeta from '@/components/base-post-meta'
-import BaseButtonsActivities from '@/components/base-buttons-activities'
-import BaseButtonsSocialSharing from '@/components/base-buttons-social-sharing'
-import BaseSummaryAuthor from '@/components/base-summary-author'
+import ButtonsActivities from '@/components/buttons-activities'
+import ButtonsSocialSharing from '@/components/buttons-social-sharing'
+import PostMeta from '@/components/post-meta'
+import SummaryAuthor from '@/components/summary-author'
 import TheHeaderGeneric from '@/components/the-header-generic'
 
 export default {
   name: 'post-detail',
   components: {
-    BasePostMeta,
-    BaseButtonsActivities,
-    BaseButtonsSocialSharing,
-    BaseSummaryAuthor,
+    ButtonsActivities,
+    ButtonsSocialSharing,
+    PostMeta,
+    SummaryAuthor,
     TheHeaderGeneric
   },
   data: function () {

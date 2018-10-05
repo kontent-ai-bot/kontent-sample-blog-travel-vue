@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'base-author-link',
+  name: 'base-link-author',
   props: {
     slug: {
       type: String,

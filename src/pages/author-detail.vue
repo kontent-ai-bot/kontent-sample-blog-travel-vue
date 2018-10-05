@@ -3,7 +3,7 @@
     <the-header-generic />
     <section id="blog-author" class="has-cover">
         <div class="inner">
-          <base-summary-author :author="author" :show-link="false" :post-count="posts.length" />
+          <summary-author :author="author" :show-link="false" :post-count="posts.length" />
         </div>
       </section>
       <post-list :posts="posts" />
@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import BaseSummaryAuthor from '@/components/base-summary-author'
 import PostList from '@/components/post-list'
+import SummaryAuthor from '@/components/summary-author'
 import TheHeaderGeneric from '@/components/the-header-generic'
 
 export default {
   name: 'author-detail',
   components: {
-    BaseSummaryAuthor,
     PostList,
+    SummaryAuthor,
     TheHeaderGeneric
   },
   data: function () {

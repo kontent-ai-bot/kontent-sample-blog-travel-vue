@@ -11,7 +11,7 @@
             {{post.title}}
           </base-link-post>
         </h2>
-        <base-post-meta
+        <post-meta
           :author="post.author"
           :activities="post.activities"
           :date="post.published"
@@ -27,12 +27,12 @@
 
 <script>
 import BaseLinkPost from './base-link-post'
-import BasePostMeta from './base-post-meta'
+import PostMeta from './post-meta'
 
 export default {
   components: {
     BaseLinkPost,
-    BasePostMeta
+    PostMeta
   },
   props: {
     post: {

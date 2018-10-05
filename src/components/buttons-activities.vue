@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'base-buttons-activities',
+  name: 'buttons-activities',
   props: {
     activities: {
       type: Array,
