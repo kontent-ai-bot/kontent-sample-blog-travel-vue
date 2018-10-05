@@ -29,6 +29,13 @@
           >
             <a>Explore by activity</a>
           </router-link>
+          <router-link
+            :to="{ name: 'author-index' }"
+            role="presentation"
+            tag="li"
+          >
+            <a>Our Authors</a>
+          </router-link>
         </ul>
       </div>
     </nav>

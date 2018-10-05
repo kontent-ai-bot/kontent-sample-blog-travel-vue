@@ -24,6 +24,12 @@ export default new Router({
       component: () => import('./pages/post-detail.vue')
     },
     {
+      path: '/by',
+      name: 'author-index',
+      props: true,
+      component: () => import('./pages/author-index.vue')
+    },
+    {
       path: '/by/:slug',
       name: 'author-detail',
       props: true,
