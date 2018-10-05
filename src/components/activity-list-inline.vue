@@ -13,7 +13,7 @@
         :key="activity.slug"
         :slug="activity.slug"
       ><!-- Comment allows formatting without adding spacing to output
-      -->{{activity.name}}<!-- Comment allows formatting without adding spacing to output
+      -->{{activity.title}}<!-- Comment allows formatting without adding spacing to output
       --></base-link-activity><!-- Comment allows formatting without adding spacing to output
       --><template v-if="(index + 1) < activities.length">,&nbsp;</template>
     </template>

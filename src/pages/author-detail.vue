@@ -47,11 +47,11 @@ export default {
           },
           activities: [
             {
-              name: 'Hiking',
+              title: 'Hiking',
               slug: 'hiking'
             },
             {
-              name: 'Sightseeing',
+              title: 'Sightseeing',
               slug: 'sightseeing'
             }
           ]
@@ -67,7 +67,7 @@ export default {
           },
           activities: [
             {
-              name: 'Hiking',
+              title: 'Hiking',
               slug: 'hiking'
             }
           ]

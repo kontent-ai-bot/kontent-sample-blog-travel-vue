@@ -8,7 +8,7 @@
         params: { slug: activity.slug }
       }"
     >
-      {{activity.name}}
+      {{activity.title}}
     </router-link>
   </aside>
 </template>

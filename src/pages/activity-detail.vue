@@ -1,6 +1,6 @@
 <template>
   <div class="tag-template">
-    <the-header-generic :title="activity.name" :subtitle="subtitle" />
+    <the-header-generic :title="activity.title" :subtitle="subtitle" />
     <post-list :posts="posts" />
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
   data: function () {
     return {
       activity: {
-        name: 'Activity name',
+        title: 'Activity title',
         slug: 'activity-slug'
       },
       posts: [
@@ -34,11 +34,11 @@ export default {
           },
           activities: [
             {
-              name: 'Hiking',
+              title: 'Hiking',
               slug: 'hiking'
             },
             {
-              name: 'Sightseeing',
+              title: 'Sightseeing',
               slug: 'sightseeing'
             }
           ]
@@ -54,7 +54,7 @@ export default {
           },
           activities: [
             {
-              name: 'Hiking',
+              title: 'Hiking',
               slug: 'hiking'
             }
           ]
@@ -74,7 +74,7 @@ export default {
   },
   computed: {
     subtitle: function () {
-      return `All posts in ${this.activity.name.toLowerCase()}`
+      return `All posts in ${this.activity.title.toLowerCase()}`
     }
   }
 }
