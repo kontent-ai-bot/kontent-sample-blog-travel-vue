@@ -47,8 +47,15 @@ export default new Router({
       component: () => import('./pages/activity-detail.vue')
     },
     {
-      path: '*',
+      path: '/not-found',
+      name: 'not-found',
       component: () => import('./pages/not-found.vue')
+    },
+    {
+      path: '/:slug',
+      name: 'page-detail',
+      props: true,
+      component: () => import('./pages/page-detail.vue')
     }
   ]
 })

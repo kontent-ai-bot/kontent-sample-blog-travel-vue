@@ -23,11 +23,23 @@
             <a>Home</a>
           </router-link>
           <router-link
+            :to="{
+              name: 'page-detail',
+              params: {
+                slug: 'about'
+              }
+            }"
+            role="presentation"
+            tag="li"
+          >
+            <a>About Travel Blog</a>
+          </router-link>
+          <router-link
             :to="{ name: 'activity-index' }"
             role="presentation"
             tag="li"
           >
-            <a>Explore by activity</a>
+            <a>Explore By Activity</a>
           </router-link>
           <router-link
             :to="{ name: 'author-index' }"
