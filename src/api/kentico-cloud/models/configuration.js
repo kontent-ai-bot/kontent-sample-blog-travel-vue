@@ -1,5 +1,6 @@
 
 import { ContentItem, ImageUrlBuilder } from 'kentico-cloud-delivery'
+import { getFirstAssetUrl } from '../helpers'
 
 export class Configuration extends ContentItem {
   constructor () {
@@ -15,8 +16,9 @@ export class Configuration extends ContentItem {
 }
 
 export function flatten (item) {
-  let featureImageUrl = ''
-  if (item.feature.assets && item.feature.assets.length > 0) {
+  let featureImageUrl = getFirstAssetUrl(item.feature.assets)
+
+  if (featureImageUrl) {
     const imageUrlBuilder = new ImageUrlBuilder(item.feature.assets[0].url)
       .withWidth(1920)
     featureImageUrl = imageUrlBuilder.getUrl()
