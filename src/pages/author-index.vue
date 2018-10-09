@@ -12,12 +12,14 @@
 </template>
 
 <script>
+import { authorService } from '../api/services/author-service'
+
 import BaseLayoutPage from '@/components/base-layout-page'
 import SummaryAuthor from '@/components/summary-author'
 import TheHeaderGeneric from '@/components/the-header-generic'
 
 export default {
-  name: 'activity-index',
+  name: 'author-index',
   components: {
     BaseLayoutPage,
     SummaryAuthor,
@@ -25,38 +27,20 @@ export default {
   },
   data: function () {
     return {
-      authors: [
-        {
-          name: 'John Smith',
-          slug: 'john-smith',
-          avatarUrl: 'https://source.unsplash.com/100x100/?avatar',
-          bio: 'Short author biography here.',
-          location: 'The World',
-          website: 'http://example.com',
-          twitter: 't_handle',
-          facebook: 'fb_handle'
-        },
-        {
-          name: 'John Smith',
-          slug: 'john-smith',
-          avatarUrl: 'https://source.unsplash.com/100x100/?avatar',
-          bio: 'Short author biography here.',
-          location: 'The World',
-          website: 'http://example.com',
-          twitter: 't_handle',
-          facebook: 'fb_handle'
-        },
-        {
-          name: 'John Smith',
-          slug: 'john-smith',
-          avatarUrl: 'https://source.unsplash.com/100x100/?avatar',
-          bio: 'Short author biography here.',
-          location: 'The World',
-          website: 'http://example.com',
-          twitter: 't_handle',
-          facebook: 'fb_handle'
-        }
-      ]
+      authors: []
+    }
+  },
+  watch: {
+    '$route': {
+      handler: 'loadPage',
+      immediate: true
+    }
+  },
+  methods: {
+    loadPage: function () {
+      authorService.getItems().then(authors => {
+        this.authors = authors
+      })
     }
   }
 }
