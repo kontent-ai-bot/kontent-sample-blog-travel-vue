@@ -1,6 +1,6 @@
 <template>
   <div class="tag-template">
-    <the-header-generic :title="activity.title" :subtitle="activity.description" :coverImageUrl="activity.featureImageUrl" />
+    <the-header-generic :title="activity.title" :subtitle="activity.description" :cover-image-url="activity.featureImageUrl" />
     <post-list :posts="posts" />
   </div>
 </template>

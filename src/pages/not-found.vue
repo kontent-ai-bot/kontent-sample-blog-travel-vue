@@ -1,5 +1,5 @@
 <template>
-  <div class="tag-template">
+  <div class="page-template">
     <the-header-generic title="Page not found" />
     <base-layout-page>
       <p>Sorry, this page doesn't exist.</p>
