@@ -19,7 +19,7 @@ export function flatten (item) {
   let featureImageUrl = getFirstAssetUrl(item.feature.assets)
 
   if (featureImageUrl) {
-    const imageUrlBuilder = new ImageUrlBuilder(item.feature.assets[0].url)
+    const imageUrlBuilder = new ImageUrlBuilder(featureImageUrl)
       .withWidth(1920)
     featureImageUrl = imageUrlBuilder.getUrl()
   }
