@@ -32,7 +32,7 @@
             role="presentation"
             tag="li"
           >
-            <a>About Travel Blog</a>
+            <a>About The Blog</a>
           </router-link>
           <router-link
             :to="{ name: 'activity-index' }"
