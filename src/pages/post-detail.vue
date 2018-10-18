@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="post"
+    v-if="postLoaded"
     class="post-template"
   >
     <the-header-generic :title="post.title" :cover-image-url="post.featureImageUrl">
@@ -65,7 +65,8 @@ export default {
   },
   data: function () {
     return {
-      post: undefined
+      post: {},
+      postLoaded: false
     }
   },
   computed: {
@@ -84,6 +85,7 @@ export default {
       console.log(this.postData)
       if (this.postData) {
         this.post = this.postData
+        this.postLoaded = true
       } else {
         postService.getItem({
           year: this.year,
@@ -93,6 +95,7 @@ export default {
         })
           .then(post => {
             this.post = post
+            this.postLoaded = true
           })
       }
     }
