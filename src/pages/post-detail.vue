@@ -93,8 +93,12 @@ export default {
           slug: this.slug
         })
           .then(post => {
-            this.post = post
-            this.postLoaded = true
+            if (post) {
+              this.post = post
+              this.postLoaded = true
+            } else {
+              this.$router.replace({ name: 'not-found', query: { url: this.$route.fullPath } })
+            }
           })
       }
     }
