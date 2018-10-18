@@ -16,6 +16,8 @@ export class Configuration extends ContentItem {
 }
 
 export function flatten (item) {
+  if (!item) return null
+
   let featureImageUrl = getFirstAssetUrl(item.feature.assets)
 
   if (featureImageUrl) {

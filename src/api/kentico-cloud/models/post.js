@@ -28,6 +28,7 @@ export class Post extends ContentItem {
 }
 
 export function flatten (item) {
+  if (!item) return null
   let featureImageUrl = getFirstAssetUrl(item.frontMatterFeatureImage.assets)
   if (featureImageUrl) {
     const imageUrlBuilder = new ImageUrlBuilder(featureImageUrl)
