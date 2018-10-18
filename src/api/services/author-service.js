@@ -16,10 +16,11 @@ class AuthorService {
     return items.items.map(flatten)
   }
 
-  async getItem () {
+  async getItem (codename) {
     const queryUrl = deliveryClient
       .items()
       .type(AUTHOR_TYPE)
+      .equalsFilter('system.codename', codename.replace(/-/g, '_'))
       .getUrl()
 
     const response = await cacheHelper.getItemsByUrl(queryUrl)

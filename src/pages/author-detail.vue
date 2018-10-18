@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { authorService } from '../api/services/author-service'
+
 import PostList from '@/components/post-list'
 import SummaryAuthor from '@/components/summary-author'
 import TheHeaderGeneric from '@/components/the-header-generic'
@@ -22,18 +24,14 @@ export default {
     SummaryAuthor,
     TheHeaderGeneric
   },
+  props: {
+    slug: {
+      type: String
+    }
+  },
   data: function () {
     return {
-      author: {
-        name: 'John Smith',
-        slug: 'john-smith',
-        avatarUrl: 'https://source.unsplash.com/100x100/?avatar',
-        bio: 'Short author biography here.',
-        location: 'The World',
-        website: 'http://example.com',
-        twitter: 't_handle',
-        facebook: 'fb_handle'
-      },
+      author: {},
       posts: [
         {
           id: 1,
@@ -83,6 +81,19 @@ export default {
           },
           activities: []
         }]
+    }
+  },
+  watch: {
+    '$route': {
+      handler: 'loadPage',
+      immediate: true
+    }
+  },
+  methods: {
+    loadPage: function () {
+      authorService.getItem(this.slug).then(author => {
+        this.author = author
+      })
     }
   }
 }
