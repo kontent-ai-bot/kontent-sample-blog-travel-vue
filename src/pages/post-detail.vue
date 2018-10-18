@@ -82,7 +82,6 @@ export default {
   },
   methods: {
     loadPage () {
-      console.log(this.postData)
       if (this.postData) {
         this.post = this.postData
         this.postLoaded = true
