@@ -12,7 +12,7 @@
           </base-link-post>
         </h2>
         <post-meta
-          :author="post.author"
+          :authors="post.authors"
           :activities="post.activities"
           :date="post.published"
         />

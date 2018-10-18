@@ -1,8 +1,5 @@
 <template>
   <span>
-    <template v-if="activities && activities.length > 0">
-      |
-    </template>
     <template
       v-for="(activity, index) in activities"
       :slug="activity.slug"
@@ -24,7 +21,7 @@
 import BaseLinkActivity from './base-link-activity'
 
 export default {
-  name: 'activity-list-inline',
+  name: 'inline-list-activity',
   components: {
     BaseLinkActivity
   },

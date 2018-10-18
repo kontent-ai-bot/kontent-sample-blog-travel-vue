@@ -12,6 +12,7 @@
 
 <script>
 import { configurationService } from '../api/services/configuration-service'
+import { postService } from '../api/services/post-service'
 
 import PostList from '@/components/post-list'
 import TheHeaderHome from '@/components/the-header-home'
@@ -24,55 +25,7 @@ export default {
   },
   data: function () {
     return {
-      posts: [
-        {
-          id: 1,
-          title: 'Post Title',
-          slug: 'post-slug',
-          excerpt: 'Post Excerpt',
-          published: new Date(Date.now()),
-          author: {
-            name: 'John Smith',
-            slug: 'john-smith'
-          },
-          activities: [
-            {
-              title: 'Hiking',
-              slug: 'hiking'
-            },
-            {
-              title: 'Sightseeing',
-              slug: 'sightseeing'
-            }
-          ]
-        }, {
-          id: 2,
-          title: 'Post Title',
-          slug: 'post-slug',
-          excerpt: 'Post Excerpt',
-          published: new Date(Date.now()),
-          author: {
-            name: 'John Smith',
-            slug: 'john-smith'
-          },
-          activities: [
-            {
-              title: 'Hiking',
-              slug: 'hiking'
-            }
-          ]
-        }, {
-          id: 3,
-          title: 'Post Title',
-          slug: 'post-slug',
-          excerpt: 'Post Excerpt',
-          published: new Date(Date.now()),
-          author: {
-            name: 'John Smith',
-            slug: 'john-smith'
-          },
-          activities: []
-        }],
+      posts: [],
       blogConfiguration: {
         loaded: false,
         name: '',
@@ -96,6 +49,10 @@ export default {
           coverImageUrl: configuration.featureImageUrl,
           loaded: true
         }
+      })
+
+      postService.getItems().then(posts => {
+        this.posts = posts
       })
     }
   }

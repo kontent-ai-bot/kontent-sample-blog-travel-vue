@@ -1,7 +1,10 @@
 <template>
   <span class="post-meta">
-    <base-link-author :slug="author.slug">{{ author.name }}</base-link-author>
-    <activity-list-inline :activities="activities" />
+    <inline-list-author :authors="authors" />
+    <template v-if="activities && activities.length > 0">
+      |
+    </template>
+    <inline-list-activity :activities="activities" />
     <template v-if="date">
       |
       <time v-if="date" :datetime="date.toISOString()">{{ displayDate }}</time>
@@ -10,21 +13,23 @@
 </template>
 
 <script>
-import ActivityListInline from './activity-list-inline'
+import InlineListActivity from './inline-list-activity'
+import InlineListAuthor from './inline-list-author'
 import BaseLinkAuthor from './base-link-author'
 
 export default {
   name: 'post-meta',
   components: {
-    ActivityListInline,
-    BaseLinkAuthor
+    BaseLinkAuthor,
+    InlineListActivity,
+    InlineListAuthor
   },
   props: {
     activities: {
       type: Array
     },
-    author: {
-      type: Object,
+    authors: {
+      type: Array,
       required: true
     },
     date: {
