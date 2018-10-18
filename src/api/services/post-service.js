@@ -1,17 +1,31 @@
 import { deliveryClient } from '../kentico-cloud/delivery-client'
 import { flatten } from '../kentico-cloud/models/post'
 import { cacheHelper } from '../cache-helper'
+import { deslugifyCodename } from '../kentico-cloud/helpers'
+
 import { SortOrder } from 'kentico-cloud-delivery'
 
 const POST_TYPE = 'post'
 
 class PostService {
-  async getItems () {
-    const queryUrl = deliveryClient
+  async getItems (filter = { type: undefined, value: undefined }) {
+    var query = deliveryClient
       .items()
       .type(POST_TYPE)
       .orderParameter('elements.published', SortOrder.desc)
-      .getUrl()
+
+    if (filter.type && filter.value) {
+      switch (filter.type) {
+        case 'author':
+          const filterValue = Array.isArray(filter.value)
+            ? filter.value.map(deslugifyCodename)
+            : [deslugifyCodename(filter.value)]
+          query.containsFilter('elements.authors', filterValue)
+          break
+      }
+    }
+
+    const queryUrl = query.getUrl()
 
     const items = await cacheHelper.getItemsByUrl(queryUrl)
 

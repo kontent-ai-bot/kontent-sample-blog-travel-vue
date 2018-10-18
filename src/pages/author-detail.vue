@@ -12,6 +12,7 @@
 
 <script>
 import { authorService } from '../api/services/author-service'
+import { postService } from '../api/services/post-service'
 
 import PostList from '@/components/post-list'
 import SummaryAuthor from '@/components/summary-author'
@@ -32,55 +33,7 @@ export default {
   data: function () {
     return {
       author: {},
-      posts: [
-        {
-          id: 1,
-          title: 'Post Title',
-          slug: 'post-slug',
-          excerpt: 'Post Excerpt',
-          published: new Date(Date.now()),
-          author: {
-            name: 'John Smith',
-            slug: 'john-smith'
-          },
-          activities: [
-            {
-              title: 'Hiking',
-              slug: 'hiking'
-            },
-            {
-              title: 'Sightseeing',
-              slug: 'sightseeing'
-            }
-          ]
-        }, {
-          id: 2,
-          title: 'Post Title',
-          slug: 'post-slug',
-          excerpt: 'Post Excerpt',
-          published: new Date(Date.now()),
-          author: {
-            name: 'John Smith',
-            slug: 'john-smith'
-          },
-          activities: [
-            {
-              title: 'Hiking',
-              slug: 'hiking'
-            }
-          ]
-        }, {
-          id: 3,
-          title: 'Post Title',
-          slug: 'post-slug',
-          excerpt: 'Post Excerpt',
-          published: new Date(Date.now()),
-          author: {
-            name: 'John Smith',
-            slug: 'john-smith'
-          },
-          activities: []
-        }]
+      posts: []
     }
   },
   watch: {
@@ -93,6 +46,10 @@ export default {
     loadPage: function () {
       authorService.getItem(this.slug).then(author => {
         this.author = author
+      })
+
+      postService.getItems({ type: 'author', value: this.slug }).then(posts => {
+        this.posts = posts
       })
     }
   }

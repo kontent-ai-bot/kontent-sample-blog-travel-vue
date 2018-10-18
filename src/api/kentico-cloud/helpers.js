@@ -12,3 +12,7 @@ export function flattenTag (tag) {
 export function slugifyCodename (codename) {
   return codename.replace(/_/g, '-')
 }
+
+export function deslugifyCodename (codename) {
+  return codename.replace(/-/g, '_')
+}
