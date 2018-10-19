@@ -1,12 +1,12 @@
 import { TypeResolver } from 'kentico-cloud-delivery'
 import { Author } from './models/author'
 import { Configuration } from './models/configuration'
-import { HtmlEmbed } from './models/html_embed'
+import { HtmlEmbed } from './models/html-embed'
 import { Page } from './models/page'
 import { Post } from './models/post'
-import { RichTextComponent } from './models/rich_text_component'
-import { TaxonomyDetails } from './models/taxonomy_details'
-import { WikipediaAttribution } from './models/wikipedia_attribution'
+import { RichTextComponent } from './models/rich-text-component'
+import { TaxonomyDetails } from './models/taxonomy-details'
+import { WikipediaAttribution } from './models/wikipedia-attribution'
 
 export const ProjectTypeResolvers = [
   new TypeResolver('author', () => new Author()),
