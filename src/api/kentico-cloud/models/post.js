@@ -1,6 +1,6 @@
-import { ContentItem, ImageUrlBuilder } from 'kentico-cloud-delivery'
+import { ContentItem } from 'kentico-cloud-delivery'
 import { flatten as flattenAuthor } from './author'
-import { getFirstAssetUrl, flattenTag } from '../helpers'
+import { getFeatureImage, flattenTag } from '../helpers'
 
 export class Post extends ContentItem {
   constructor () {
@@ -26,12 +26,7 @@ export class Post extends ContentItem {
 
 export function flatten (item) {
   if (!item) return null
-  let featureImageUrl = getFirstAssetUrl(item.frontMatterFeatureImage.assets)
-  if (featureImageUrl) {
-    const imageUrlBuilder = new ImageUrlBuilder(featureImageUrl)
-      .withWidth(1920)
-    featureImageUrl = imageUrlBuilder.getUrl()
-  }
+  const featureImageUrl = getFeatureImage(item)
 
   return {
     id: item.system.id,
