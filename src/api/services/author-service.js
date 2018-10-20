@@ -1,6 +1,7 @@
 import { deliveryClient } from '../kentico-cloud/delivery-client'
 import { flatten } from '../kentico-cloud/models/author'
 import { cacheHelper } from '../cache-helper'
+import { convertSlugToCodename } from '../kentico-cloud/helpers'
 
 const AUTHOR_TYPE = 'author'
 
@@ -16,11 +17,11 @@ class AuthorService {
     return items.items.map(flatten)
   }
 
-  async getItem (codename) {
+  async getItem (slug) {
     const queryUrl = deliveryClient
       .items()
       .type(AUTHOR_TYPE)
-      .equalsFilter('system.codename', codename.replace(/-/g, '_'))
+      .equalsFilter('system.codename', convertSlugToCodename(slug))
       .getUrl()
 
     const response = await cacheHelper.getItemsByUrl(queryUrl)

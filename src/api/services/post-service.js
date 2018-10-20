@@ -1,7 +1,7 @@
 import { deliveryClient } from '../kentico-cloud/delivery-client'
 import { flatten } from '../kentico-cloud/models/post'
 import { cacheHelper } from '../cache-helper'
-import { deslugifyCodename } from '../kentico-cloud/helpers'
+import { ensureArrayOfCodenames } from '../kentico-cloud/helpers'
 
 import { SortOrder } from 'kentico-cloud-delivery'
 
@@ -17,10 +17,10 @@ class PostService {
     if (filter.type && filter.value) {
       switch (filter.type) {
         case 'author':
-          const filterValue = Array.isArray(filter.value)
-            ? filter.value.map(deslugifyCodename)
-            : [deslugifyCodename(filter.value)]
-          query.containsFilter('elements.authors', filterValue)
+          query.containsFilter('elements.authors', ensureArrayOfCodenames(filter.value))
+          break
+        case 'activity':
+          query.containsFilter('elements.tags', ensureArrayOfCodenames(filter.value))
           break
       }
     }
