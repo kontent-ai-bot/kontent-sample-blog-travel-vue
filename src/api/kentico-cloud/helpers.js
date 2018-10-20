@@ -1,10 +1,12 @@
 import { ImageUrlBuilder } from 'kentico-cloud-delivery'
 
 export function convertCodenameToSlug (codename) {
+  if (!codename) return null
   return codename.replace(/_/g, '-')
 }
 
 export function convertSlugToCodename (slug) {
+  if (!slug) return null
   return slug.replace(/-/g, '_')
 }
 
@@ -19,7 +21,11 @@ export function flattenTag (tag) {
 
   return {
     title: tag.name,
-    slug: convertCodenameToSlug(tag.codename)
+    slug: convertCodenameToSlug(tag.codename),
+
+    children: tag.terms && tag.terms.length > 0
+      ? flattenTag(tag.terms)
+      : null
   }
 }
 

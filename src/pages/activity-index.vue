@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { taxonomyService } from '../api/services/taxonomy-service'
+
 import ActivityTree from '@/components/activity-tree'
 import BaseLayoutPage from '@/components/base-layout-page'
 import TheHeaderGeneric from '@/components/the-header-generic'
@@ -21,18 +23,20 @@ export default {
   },
   data: function () {
     return {
-      activities: [
-        {
-          title: 'Hiking',
-          slug: 'hiking',
-          description: 'A brief description goes here'
-        },
-        {
-          title: 'Sightseeing',
-          slug: 'sightseeing',
-          description: 'A brief description goes here'
-        }
-      ]
+      activities: []
+    }
+  },
+  watch: {
+    '$route': {
+      handler: 'loadPage',
+      immediate: true
+    }
+  },
+  methods: {
+    loadPage: function () {
+      taxonomyService.getTree('activities').then(activities => {
+        this.activities = activities
+      })
     }
   }
 }

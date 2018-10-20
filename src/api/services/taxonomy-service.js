@@ -1,7 +1,7 @@
 import { deliveryClient } from '../kentico-cloud/delivery-client'
 import { flatten } from '../kentico-cloud/models/taxonomy-details'
 import { cacheHelper } from '../cache-helper'
-import { ensureArrayOfCodenames } from '../kentico-cloud/helpers'
+import { ensureArrayOfCodenames, flattenTag } from '../kentico-cloud/helpers'
 
 const TAXONOMY_TYPE = 'taxonomy_details'
 
@@ -17,6 +17,16 @@ class TaxonomyService {
     const response = await cacheHelper.getItemsByUrl(queryUrl)
 
     return flatten(response.firstItem)
+  }
+
+  async getTree (codename = 'activities') {
+    const queryUrl = deliveryClient
+      .taxonomy(codename)
+      .getUrl()
+
+    const response = await cacheHelper.getTaxonomyByUrl(queryUrl)
+
+    return response.taxonomy.terms.map(flattenTag)
   }
 }
 
