@@ -1,5 +1,5 @@
 <template>
-  <div class="page-template">
+  <div v-if="page" class="page-template">
     <the-header-generic :title="page.title" :cover-image-url="page.featureImageUrl" />
     <base-layout-page>
       <div v-html="page.body"></div>
@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { pageService } from '../api/services/page-service'
+
 import BaseLayoutPage from '@/components/base-layout-page'
 import TheHeaderGeneric from '@/components/the-header-generic'
 
@@ -24,12 +26,7 @@ export default {
   },
   data: function () {
     return {
-      page: {
-        slug: 'about',
-        title: 'About Page Title',
-        featureImageUrl: 'https://source.unsplash.com/1600x900/?page',
-        body: '<p>Body copy <em>as HTML</em>.</p>'
-      }
+      page: null
     }
   },
   watch: {
@@ -40,9 +37,13 @@ export default {
   },
   methods: {
     loadPage: function () {
-      if (this.slug !== this.page.slug) {
-        this.$router.replace({ name: 'not-found', query: { url: this.$route.fullPath } })
-      }
+      pageService.getItem({ slug: this.slug }).then(page => {
+        if (page) {
+          this.page = page
+        } else {
+          // this.$router.replace({ name: 'not-found', query: { url: this.$route.fullPath } })
+        }
+      })
     }
   }
 }

@@ -26,7 +26,7 @@
             :to="{
               name: 'page-detail',
               params: {
-                slug: 'about'
+                slug: 'about-travel-adventures'
               }
             }"
             role="presentation"

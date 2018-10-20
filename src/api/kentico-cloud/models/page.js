@@ -1,4 +1,5 @@
 
+import { getFeatureImage } from '../helpers'
 import { ContentItem } from 'kentico-cloud-delivery'
 
 export class Page extends ContentItem {
@@ -20,5 +21,19 @@ export class Page extends ContentItem {
         return fieldName
       }
     })
+  }
+}
+
+export function flatten (item) {
+  if (!item) return null
+  const featureImageUrl = getFeatureImage(item)
+
+  return {
+    id: item.system.id,
+    codename: item.system.codename,
+    title: item.frontMatterTitle.value,
+    featureImageUrl,
+    slug: item.slug.value,
+    body: item.body.resolveHtml()
   }
 }
