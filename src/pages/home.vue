@@ -1,17 +1,17 @@
 <template>
   <div class="home-template">
     <the-header-home
-      v-if="blogConfiguration.loaded"
-      :name="blogConfiguration.name"
-      :description="blogConfiguration.description"
-      :cover-image-url="blogConfiguration.coverImageUrl"
+      v-if="blogConfiguration"
+      :name="blogConfiguration.title"
+      :description="blogConfiguration.tagline"
+      :cover-image-url="blogConfiguration.featureImageUrl"
     />
     <post-list :posts="posts" />
   </div>
 </template>
 
 <script>
-import { configurationService } from '../api/services/configuration-service'
+import { loadBlogConfiguration } from '../mixins/load-blog-configuration'
 import { postService } from '../api/services/post-service'
 
 import PostList from '@/components/post-list'
@@ -25,15 +25,10 @@ export default {
   },
   data: function () {
     return {
-      posts: [],
-      blogConfiguration: {
-        loaded: false,
-        name: '',
-        description: '',
-        coverImageUrl: ''
-      }
+      posts: []
     }
   },
+  mixins: [loadBlogConfiguration],
   watch: {
     '$route': {
       handler: 'loadPage',
@@ -42,15 +37,6 @@ export default {
   },
   methods: {
     loadPage: function () {
-      configurationService.getItem().then(configuration => {
-        this.blogConfiguration = {
-          name: configuration.title,
-          description: configuration.tagline,
-          coverImageUrl: configuration.featureImageUrl,
-          loaded: true
-        }
-      })
-
       postService.getItems().then(posts => {
         this.posts = posts
       })

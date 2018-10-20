@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { loadBlogConfiguration } from '../mixins/load-blog-configuration'
 import BaseHeader from './base-header'
 
 export default {
@@ -22,6 +23,7 @@ export default {
   components: {
     BaseHeader
   },
+  mixins: [loadBlogConfiguration],
   props: {
     title: {
       type: String
@@ -35,7 +37,12 @@ export default {
   },
   computed: {
     coverStyle: function () {
-      return `background-image: url('${this.coverImageUrl || 'https://source.unsplash.com/random/1920x900?generic'}')`
+      const imageUrl = this.coverImageUrl ||
+      (this.blogConfiguration ? this.blogConfiguration.featureImageUrl : '')
+
+      return imageUrl
+        ? `background-image: url('${imageUrl}')`
+        : ''
     }
   }
 }
