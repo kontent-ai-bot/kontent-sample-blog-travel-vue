@@ -11,16 +11,18 @@
         v-if="post.body"
         :dynamic-template="post.body"
       />
-      <section class="post-info">
-        <buttons-social-sharing :twitter-text="post.title" :url="currentUrl" />
-        <buttons-activities :activities="post.activities" />
-        <div class="clear"></div>
-        <summary-author
-         v-for="author in post.authors"
-         :key="author.slug"
-         :author="author"
-        />
-      </section>
+      <template slot="after-content-section">
+        <section class="post-info">
+          <buttons-social-sharing :twitter-text="post.title" :url="currentUrl" />
+          <buttons-activities :activities="post.activities" />
+          <div class="clear"></div>
+          <summary-author
+            v-for="author in post.authors"
+            :key="author.slug"
+            :author="author"
+          />
+        </section>
+      </template>
     </base-layout-page>
   </div>
 </template>

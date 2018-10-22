@@ -1722,3 +1722,27 @@ ul.tag-tree {
     }
   }
 }
+
+.wikipedia-citation {
+  position: relative;
+  margin: 2em 0 0;
+  padding: 2em 0;
+  z-index: 10;
+  border-top: 1px solid $color-gray-90;
+  border-bottom: 1px solid $color-gray-90;
+  clear: both;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.6em;
+  line-height: 1.334em;
+  color: $color-blue-60;
+  text-align: center;
+
+  a {
+    color: $color-blue-60;
+    border-color: $color-blue-60;
+
+    &:active, &:focus, &:hover {
+      border-color: $primary-color
+    }
+  }
+}

@@ -9,6 +9,7 @@
       <section class="post-content">
         <slot />
       </section>
+      <slot name="after-content-section"></slot>
     </div>
   </article>
 </main>
