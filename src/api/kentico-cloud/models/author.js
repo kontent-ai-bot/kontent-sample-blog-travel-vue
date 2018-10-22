@@ -5,8 +5,10 @@ import { getFirstAssetUrl, convertCodenameToSlug } from '../helpers'
 export class Author extends ContentItem {
   constructor () {
     super({
-      linkResolver: (link) => {
-        return `/by/${convertCodenameToSlug(link.codename)}`
+      linkResolver: (link, context) => {
+        return {
+          asHtml: `<router-link :to="{ name: 'author-detail', params: { slug: '${convertCodenameToSlug(link.codename)}' } }">${context.linkText}</router-link>`
+        }
       },
       richTextResolver: (author) => {
         const authorObject = JSON.stringify(flatten(author))

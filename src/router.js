@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+import { deliveryClient } from './api/kentico-cloud/delivery-client'
+import { flatten as flattenPost } from './api/kentico-cloud/models/post'
+import { getDateUrlObject } from './api/helpers'
+
 import Home from './pages/home.vue'
 
 Vue.use(Router)
@@ -50,6 +55,42 @@ export default new Router({
       path: '/not-found',
       name: 'not-found',
       component: () => import('./pages/not-found.vue')
+    },
+    {
+      path: '/link/:guid',
+      name: 'link',
+      beforeEnter: (to, from, next) => {
+        deliveryClient
+          .items()
+          .equalsFilter('system.id', to.params.guid)
+          .getPromise()
+          .then(items => {
+            const item = items.firstItem
+            if (item) {
+              const params = {
+                ...getDateUrlObject(item.published.datetime),
+                slug: item.slug.value,
+                postData: flattenPost(item)
+              }
+
+              switch (item.system.type) {
+                case 'post':
+                  next({
+                    name: 'post-detail',
+                    params
+                  })
+                  break
+                default:
+                  next({ name: 'not-found' })
+              }
+            } else {
+              next({ name: 'not-found' })
+            }
+          })
+          .catch(() => {
+            next({ name: 'not-found' })
+          })
+      }
     },
     {
       path: '/:slug',

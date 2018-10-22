@@ -5,8 +5,10 @@ import { convertCodenameToSlug, getFeatureImage, flattenTag } from '../helpers'
 export class TaxonomyDetails extends ContentItem {
   constructor () {
     super({
-      linkResolver: (link) => {
-        return `/go/${convertCodenameToSlug(link.codename)}`
+      linkResolver: (link, context) => {
+        return {
+          asHtml: `<router-link :to="{ name: 'activity-detail', params: { slug: '${convertCodenameToSlug(link.codename)}' } }">${context.linkText}</router-link>`
+        }
       },
       propertyResolver: (fieldName) => {
         if (fieldName === 'front_matter__title') {

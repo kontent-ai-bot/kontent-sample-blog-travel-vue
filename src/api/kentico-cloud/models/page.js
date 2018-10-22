@@ -5,8 +5,10 @@ import { ContentItem } from 'kentico-cloud-delivery'
 export class Page extends ContentItem {
   constructor () {
     super({
-      linkResolver: (link) => {
-        return `/${link.urlSlug}`
+      linkResolver: (link, context) => {
+        return {
+          asHtml: `<router-link :to="{ name: 'page-detail', params: { slug: '${link.urlSlug}' } }">${context.linkText}</router-link>`
+        }
       },
       propertyResolver: (fieldName) => {
         if (fieldName === 'metadata__page_description') {
