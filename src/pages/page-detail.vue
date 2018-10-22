@@ -2,7 +2,10 @@
   <div v-if="page" class="page-template">
     <the-header-generic :title="page.title" :cover-image-url="page.featureImageUrl" />
     <base-layout-page>
-      <div v-html="page.body"></div>
+      <base-dynamic-render
+        v-if="page.body"
+        :dynamic-template="page.body"
+      />
     </base-layout-page>
   </div>
 </template>
@@ -10,12 +13,14 @@
 <script>
 import { pageService } from '../api/services/page-service'
 
+import BaseDynamicRender from '@/components/base-dynamic-render'
 import BaseLayoutPage from '@/components/base-layout-page'
 import TheHeaderGeneric from '@/components/the-header-generic'
 
 export default {
   name: 'page-detail',
   components: {
+    BaseDynamicRender,
     BaseLayoutPage,
     TheHeaderGeneric
   },

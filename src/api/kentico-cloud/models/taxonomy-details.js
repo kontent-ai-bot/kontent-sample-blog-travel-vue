@@ -1,10 +1,13 @@
 
 import { ContentItem } from 'kentico-cloud-delivery'
-import { getFeatureImage, flattenTag } from '../helpers'
+import { convertCodenameToSlug, getFeatureImage, flattenTag } from '../helpers'
 
 export class TaxonomyDetails extends ContentItem {
   constructor () {
     super({
+      linkResolver: (link) => {
+        return `/go/${convertCodenameToSlug(link.codename)}`
+      },
       propertyResolver: (fieldName) => {
         if (fieldName === 'front_matter__title') {
           return 'frontMatterTitle'

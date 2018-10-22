@@ -5,6 +5,9 @@ import { getFeatureImage, flattenTag } from '../helpers'
 export class Post extends ContentItem {
   constructor () {
     super({
+      linkResolver: (link) => {
+        return `/2018/9/16/${link.urlSlug}`
+      },
       propertyResolver: (fieldName) => {
         if (fieldName === 'front_matter__title') {
           return 'frontMatterTitle'

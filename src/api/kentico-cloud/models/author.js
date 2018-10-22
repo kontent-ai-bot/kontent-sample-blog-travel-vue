@@ -5,6 +5,13 @@ import { getFirstAssetUrl, convertCodenameToSlug } from '../helpers'
 export class Author extends ContentItem {
   constructor () {
     super({
+      linkResolver: (link) => {
+        return `/by/${convertCodenameToSlug(link.codename)}`
+      },
+      richTextResolver: (author) => {
+        const authorObject = JSON.stringify(flatten(author))
+        return `<summary-author :author='${authorObject}' />`
+      },
       propertyResolver: (fieldName) => {
         if (fieldName === 'facebook_username') {
           return 'facebookUsername'

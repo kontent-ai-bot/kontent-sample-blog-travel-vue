@@ -5,6 +5,9 @@ import { ContentItem } from 'kentico-cloud-delivery'
 export class Page extends ContentItem {
   constructor () {
     super({
+      linkResolver: (link) => {
+        return `/${link.urlSlug}`
+      },
       propertyResolver: (fieldName) => {
         if (fieldName === 'metadata__page_description') {
           return 'metadataPageDescription'

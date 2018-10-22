@@ -9,6 +9,7 @@ class PageService {
     const queryUrl = deliveryClient
       .items()
       .type(PAGE_TYPE)
+      .depthParameter(6)
       .limitParameter(1)
       .equalsFilter('elements.slug', slug)
       .getUrl()
