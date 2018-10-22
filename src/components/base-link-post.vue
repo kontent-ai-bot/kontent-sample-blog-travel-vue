@@ -4,9 +4,9 @@
       name: 'post-detail',
       params: {
         slug,
-        year,
-        month,
-        date,
+        year: dateUrlObject.year,
+        month: dateUrlObject.month,
+        date: dateUrlObject.date,
         postData: post
       }
     }"
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { getDateUrlObject } from '../api/helpers'
+
 export default {
   name: 'base-link-post',
   props: {
@@ -32,14 +34,8 @@ export default {
     }
   },
   computed: {
-    date: function () {
-      return this.published.getUTCDate().toString()
-    },
-    month: function () {
-      return (this.published.getUTCMonth() + 1).toString()
-    },
-    year: function () {
-      return this.published.getUTCFullYear().toString()
+    dateUrlObject: function () {
+      return getDateUrlObject(this.published)
     }
   }
 }
