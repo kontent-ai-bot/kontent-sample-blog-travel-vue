@@ -7,7 +7,10 @@
       <post-meta :authors="post.authors" :date="post.published" :activities="post.activities" />
     </the-header-generic>
     <base-layout-page>
-      <div v-html="post.body"></div>
+      <base-dynamic-render
+        v-if="post.body"
+        :dynamic-template="post.body"
+      />
       <section class="post-info">
         <buttons-social-sharing :twitter-text="post.title" :url="currentUrl" />
         <buttons-activities :activities="post.activities" />
@@ -25,6 +28,7 @@
 <script>
 import { postService } from '../api/services/post-service'
 
+import BaseDynamicRender from '@/components/base-dynamic-render'
 import BaseLayoutPage from '@/components/base-layout-page'
 import ButtonsActivities from '@/components/buttons-activities'
 import ButtonsSocialSharing from '@/components/buttons-social-sharing'
@@ -35,6 +39,7 @@ import TheHeaderGeneric from '@/components/the-header-generic'
 export default {
   name: 'post-detail',
   components: {
+    BaseDynamicRender,
     BaseLayoutPage,
     ButtonsActivities,
     ButtonsSocialSharing,
