@@ -6,7 +6,7 @@ class ConfigurationService {
   async getItem () {
     const queryUrl = deliveryClient
       .items()
-      .equalsFilter('system.codename', process.env.VUE_APP_KC_BLOG_CONFIGURATION_CODENAME)
+      .equalsFilter('system.codename', process.env.VUE_APP_KENTICO_CLOUD_BLOG_CONFIGURATION_CODENAME)
       .getUrl()
 
     const response = await cacheHelper.getItemsByUrl(queryUrl)
