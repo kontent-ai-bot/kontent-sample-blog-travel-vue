@@ -1,6 +1,6 @@
 
-import { ContentItem, ImageUrlBuilder } from 'kentico-cloud-delivery'
-import { getFirstAssetUrl } from '../helpers'
+import { ContentItem } from 'kentico-cloud-delivery'
+import { getFeatureImage } from '../helpers'
 
 export class Configuration extends ContentItem {
   constructor () {
@@ -9,6 +9,15 @@ export class Configuration extends ContentItem {
         if (fieldName === 'about_blurb') {
           return 'aboutBlurb'
         }
+
+        if (fieldName === 'front_matter__title') {
+          return 'frontMatterTitle'
+        }
+
+        if (fieldName === 'front_matter__feature_image') {
+          return 'frontMatterFeatureImage'
+        }
+
         return fieldName
       }
     })
@@ -18,18 +27,12 @@ export class Configuration extends ContentItem {
 export function flatten (item) {
   if (!item) return null
 
-  let featureImageUrl = getFirstAssetUrl(item.feature.assets)
-
-  if (featureImageUrl) {
-    const imageUrlBuilder = new ImageUrlBuilder(featureImageUrl)
-      .withWidth(1920)
-    featureImageUrl = imageUrlBuilder.getUrl()
-  }
+  const featureImageUrl = getFeatureImage(item)
 
   return {
     id: item.system.id,
     codename: item.system.codename,
-    title: item.title.value,
+    title: item.frontMatterTitle.value,
     tagline: item.tagline.value,
     featureImageUrl
   }
