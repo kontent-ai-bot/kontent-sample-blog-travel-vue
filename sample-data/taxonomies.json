@@ -1,0 +1,108 @@
+{
+  "taxonomies": [
+    {
+      "system": {
+        "id": "4cf51d34-86fb-47e3-b31d-2d97fa93426a",
+        "name": "Activities",
+        "codename": "activities",
+        "last_modified": "2018-10-03T16:25:53.6550674Z"
+      },
+      "terms": [
+        {
+          "name": "Road Tripping",
+          "codename": "road_tripping",
+          "terms": []
+        },
+        {
+          "name": "Sight-seeing",
+          "codename": "sight_seeing",
+          "terms": []
+        },
+        {
+          "name": "Hiking",
+          "codename": "hiking",
+          "terms": []
+        }
+      ]
+    },
+    {
+      "system": {
+        "id": "92a4342e-773c-4998-83ae-6301132fd303",
+        "name": "Geography",
+        "codename": "geography",
+        "last_modified": "2018-09-12T17:48:06.48653Z"
+      },
+      "terms": [
+        {
+          "name": "Africa",
+          "codename": "africa",
+          "terms": []
+        },
+        {
+          "name": "Asia",
+          "codename": "asia",
+          "terms": []
+        },
+        {
+          "name": "Antarctica",
+          "codename": "antarctica",
+          "terms": []
+        },
+        {
+          "name": "Australia",
+          "codename": "australia",
+          "terms": [
+            {
+              "name": "Sydney",
+              "codename": "sydney",
+              "terms": []
+            }
+          ]
+        },
+        {
+          "name": "Europe",
+          "codename": "europe",
+          "terms": []
+        },
+        {
+          "name": "North America",
+          "codename": "north_america",
+          "terms": [
+            {
+              "name": "United States",
+              "codename": "united_states",
+              "terms": [
+                {
+                  "name": "Arizona",
+                  "codename": "arizona",
+                  "terms": []
+                },
+                {
+                  "name": "California",
+                  "codename": "california",
+                  "terms": []
+                },
+                {
+                  "name": "Washington",
+                  "codename": "washington",
+                  "terms": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "South America",
+          "codename": "south_america",
+          "terms": []
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "skip": 0,
+    "limit": 0,
+    "count": 2,
+    "next_page": ""
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "types": [
+    {
+      "system": {
+        "id": "e624e463-2680-4250-9e90-7ee4081acfd2",
+        "name": "Author",
+        "codename": "author",
+        "last_modified": "2018-09-11T19:28:52.0097297Z"
+      },
+      "elements": {
+        "avatar": {
+          "type": "asset",
+          "name": "Avatar"
+        },
+        "byline": {
+          "type": "text",
+          "name": "Byline"
+        },
+        "location": {
+          "type": "text",
+          "name": "Location"
+        },
+        "website": {
+          "type": "text",
+          "name": "Website"
+        },
+        "name": {
+          "type": "text",
+          "name": "Name"
+        },
+        "facebook_username": {
+          "type": "text",
+          "name": "Facebook Username"
+        },
+        "twitter_handle": {
+          "type": "text",
+          "name": "Twitter Handle"
+        }
+      }
+    },
+    {
+      "system": {
+        "id": "c87e488e-2b58-450a-9314-49e7de6b5e61",
+        "name": "Configuration",
+        "codename": "configuration",
+        "last_modified": "2018-11-13T20:49:26.5780981Z"
+      },
+      "elements": {
+        "front_matter__title": {
+          "type": "text",
+          "name": "Title"
+        },
+        "tagline": {
+          "type": "text",
+          "name": "Tagline"
+        },
+        "front_matter__feature_image": {
+          "type": "asset",
+          "name": "Feature Image"
+        },
+        "about_blurb": {
+          "type": "modular_content",
+          "name": "About Blurb"
+        }
+      }
+    },
+    {
+      "system": {
+        "id": "fc857cbe-a218-4146-8bec-365f0a3738f3",
+        "name": "HTML Embed",
+        "codename": "html_embed",
+        "last_modified": "2018-09-12T12:19:49.2418564Z"
+      },
+      "elements": {
+        "embed_code": {
+          "type": "text",
+          "name": "Embed code"
+        }
+      }
+    },
+    {
+      "system": {
+        "id": "da0859b7-ae2b-4bd0-9cd2-b01663492f77",
+        "name": "Page",
+        "codename": "page",
+        "last_modified": "2018-11-13T20:56:25.4678695Z"
+      },
+      "elements": {
+        "metadata__page_description": {
+          "type": "text",
+          "name": "Page Description"
+        },
+        "metadata__page_title": {
+          "type": "text",
+          "name": "Page Title"
+        },
+        "front_matter__title": {
+          "type": "text",
+          "name": "Title"
+        },
+        "front_matter__feature_image": {
+          "type": "asset",
+          "name": "Feature Image"
+        },
+        "slug": {
+          "type": "url_slug",
+          "name": "Slug"
+        },
+        "body": {
+          "type": "rich_text",
+          "name": "Body"
+        }
+      }
+    },
+    {
+      "system": {
+        "id": "71c55db6-559f-414a-9888-267b1ca3479e",
+        "name": "Post",
+        "codename": "post",
+        "last_modified": "2018-11-13T21:16:16.5443495Z"
+      },
+      "elements": {
+        "excerpt": {
+          "type": "text",
+          "name": "Excerpt"
+        },
+        "metadata__page_description": {
+          "type": "text",
+          "name": "Page Description"
+        },
+        "metadata__page_title": {
+          "type": "text",
+          "name": "Page Title"
+        },
+        "published": {
+          "type": "date_time",
+          "name": "Published"
+        },
+        "slug": {
+          "type": "url_slug",
+          "name": "Slug"
+        },
+        "front_matter__title": {
+          "type": "text",
+          "name": "Title"
+        },
+        "body": {
+          "type": "rich_text",
+          "name": "Body"
+        },
+        "front_matter__feature_image": {
+          "type": "asset",
+          "name": "Feature Image"
+        },
+        "activities": {
+          "type": "taxonomy",
+          "name": "Activities",
+          "taxonomy_group": "activities"
+        },
+        "geography": {
+          "type": "taxonomy",
+          "name": "Geography",
+          "taxonomy_group": "geography"
+        },
+        "authors": {
+          "type": "modular_content",
+          "name": "Authors"
+        }
+      }
+    },
+    {
+      "system": {
+        "id": "f0a788dd-e00e-461f-af3d-a07799856a59",
+        "name": "Rich Text Component",
+        "codename": "rich_text_component",
+        "last_modified": "2018-09-28T21:42:53.8109811Z"
+      },
+      "elements": {
+        "content": {
+          "type": "rich_text",
+          "name": "Content"
+        }
+      }
+    },
+    {
+      "system": {
+        "id": "90ce3ad3-8db4-4a05-81cf-fa11ef62e722",
+        "name": "Taxonomy Details",
+        "codename": "taxonomy_details",
+        "last_modified": "2018-11-13T21:15:53.8474796Z"
+      },
+      "elements": {
+        "front_matter__title": {
+          "type": "text",
+          "name": "Title"
+        },
+        "geography": {
+          "type": "taxonomy",
+          "name": "Geography",
+          "taxonomy_group": "geography"
+        },
+        "activities": {
+          "type": "taxonomy",
+          "name": "Activities",
+          "taxonomy_group": "activities"
+        },
+        "front_matter__feature_image": {
+          "type": "asset",
+          "name": "Feature Image"
+        },
+        "description": {
+          "type": "text",
+          "name": "Description"
+        }
+      }
+    },
+    {
+      "system": {
+        "id": "3630c8cd-e737-4d9c-b89e-c782d3fe12ad",
+        "name": "Wikipedia Attribution",
+        "codename": "wikipedia_attribution",
+        "last_modified": "2018-09-11T21:41:13.2481503Z"
+      },
+      "elements": {
+        "source_title": {
+          "type": "text",
+          "name": "Source Title"
+        },
+        "source_url": {
+          "type": "text",
+          "name": "Source URL"
+        }
+      }
+    }
+  ],
+  "pagination": {
+    "skip": 0,
+    "limit": 0,
+    "count": 8,
+    "next_page": ""
+  }
+}
