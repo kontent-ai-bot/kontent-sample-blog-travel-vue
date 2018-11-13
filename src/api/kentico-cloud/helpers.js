@@ -16,15 +16,15 @@ export function ensureArrayOfCodenames (value) {
     : [convertSlugToCodename(value)]
 }
 
-export function flattenTag (tag) {
-  if (!tag) return null
+export function flattenTaxonomyTerm (term) {
+  if (!term) return null
 
   return {
-    title: tag.name,
-    slug: convertCodenameToSlug(tag.codename),
+    title: term.name,
+    slug: convertCodenameToSlug(term.codename),
 
-    children: tag.terms && tag.terms.length > 0
-      ? flattenTag(tag.terms)
+    children: term.terms && term.terms.length > 0
+      ? flattenTaxonomyTerm(term.terms)
       : null
   }
 }

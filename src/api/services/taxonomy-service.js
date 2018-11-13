@@ -1,7 +1,7 @@
 import { deliveryClient } from '../kentico-cloud/delivery-client'
 import { flatten } from '../kentico-cloud/models/taxonomy-details'
 import { cacheHelper } from '../cache-helper'
-import { ensureArrayOfCodenames, flattenTag } from '../kentico-cloud/helpers'
+import { ensureArrayOfCodenames, flattenTaxonomyTerm } from '../kentico-cloud/helpers'
 
 const TAXONOMY_TYPE = 'taxonomy_details'
 
@@ -11,7 +11,7 @@ class TaxonomyService {
       .items()
       .type(TAXONOMY_TYPE)
       .limitParameter(1)
-      .containsFilter('elements.tags', ensureArrayOfCodenames(slug))
+      .containsFilter('elements.activities', ensureArrayOfCodenames(slug))
       .getUrl()
 
     const response = await cacheHelper.getItemsByUrl(queryUrl)
@@ -26,7 +26,7 @@ class TaxonomyService {
 
     const response = await cacheHelper.getTaxonomyByUrl(queryUrl)
 
-    return response.taxonomy.terms.map(flattenTag)
+    return response.taxonomy.terms.map(flattenTaxonomyTerm)
   }
 }
 

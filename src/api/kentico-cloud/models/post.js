@@ -1,6 +1,6 @@
 import { ContentItem } from 'kentico-cloud-delivery'
 import { flatten as flattenAuthor } from './author'
-import { getFeatureImage, flattenTag } from '../helpers'
+import { getFeatureImage, flattenTaxonomyTerm } from '../helpers'
 
 export class Post extends ContentItem {
   constructor () {
@@ -42,7 +42,7 @@ export function flatten (item) {
     excerpt: item.excerpt.text,
     published: item.published.datetime,
     authors: item.authors.map(flattenAuthor),
-    activities: item.tags.taxonomyTerms.map(flattenTag),
+    activities: item.activities.taxonomyTerms.map(flattenTaxonomyTerm),
     body: item.body.resolveHtml()
   }
 }

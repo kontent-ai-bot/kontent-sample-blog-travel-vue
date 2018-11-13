@@ -1,6 +1,6 @@
 
 import { ContentItem } from 'kentico-cloud-delivery'
-import { convertCodenameToSlug, getFeatureImage, flattenTag } from '../helpers'
+import { convertCodenameToSlug, getFeatureImage, flattenTaxonomyTerm } from '../helpers'
 
 export class TaxonomyDetails extends ContentItem {
   constructor () {
@@ -27,13 +27,13 @@ export function flatten (item) {
   if (!item) return null
 
   const featureImageUrl = getFeatureImage(item)
-  const tag = flattenTag(item.tags.value[0])
+  const activity = flattenTaxonomyTerm(item.activities.value[0])
 
   return {
     id: item.system.id,
     codename: item.system.codename,
     title: item.frontMatterTitle.text,
-    slug: tag ? tag.slug : '',
+    slug: activity ? activity.slug : '',
     description: item.description.text,
     featureImageUrl
   }

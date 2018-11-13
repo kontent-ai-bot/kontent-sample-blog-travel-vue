@@ -20,7 +20,7 @@ class PostService {
           query.containsFilter('elements.authors', ensureArrayOfCodenames(filter.value))
           break
         case 'activity':
-          query.containsFilter('elements.tags', ensureArrayOfCodenames(filter.value))
+          query.containsFilter('elements.activities', ensureArrayOfCodenames(filter.value))
           break
       }
     }
