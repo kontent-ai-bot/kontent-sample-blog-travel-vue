@@ -8,6 +8,8 @@
         </span>
         <span class="credits-software">
           Published with <a href="http://kenticocloud.com">Kentico Cloud</a>
+          <br />
+          <a href="https://github.com/Kentico/cloud-sample-app-vue-blog-travel">Source available on GitHub</a>
         </span>
       </section>
     </div>
