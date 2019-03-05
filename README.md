@@ -1,5 +1,7 @@
 # Kentico Cloud Sample: VueJS Travel Blog
 
+[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-cloud)
+
 ## VueJS Project setup
 ```
 npm install
