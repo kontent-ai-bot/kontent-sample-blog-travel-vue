@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import { deliveryClient } from './api/kentico-cloud/delivery-client'
-import { flatten as flattenPost } from './api/kentico-cloud/models/post'
+import { deliveryClient } from './api/kontent/delivery-client'
+import { flatten as flattenPost } from './api/kontent/models/post'
 import { getDateUrlObject } from './api/helpers'
 
 import Home from './pages/home.vue'

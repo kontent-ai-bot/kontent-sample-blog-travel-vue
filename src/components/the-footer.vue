@@ -7,9 +7,9 @@
           by <a href="http://zutrinken.com" rel="nofollow">zutrinken</a>
         </span>
         <span class="credits-software">
-          Published with <a href="http://kenticocloud.com">Kentico Cloud</a>
+          Published with <a href="http://kontent.ai">Kentico Kontent</a>
           <br />
-          <a href="https://github.com/Kentico/cloud-sample-app-vue-blog-travel">Source available on GitHub</a>
+          <a href="https://github.com/Kentico/kontent-sample-app-vue-blog-travel">Source available on GitHub</a>
         </span>
       </section>
     </div>

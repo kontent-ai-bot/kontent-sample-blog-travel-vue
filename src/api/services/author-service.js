@@ -1,7 +1,7 @@
-import { deliveryClient } from '../kentico-cloud/delivery-client'
-import { flatten } from '../kentico-cloud/models/author'
+import { deliveryClient } from '../kontent/delivery-client'
+import { flatten } from '../kontent/models/author'
 import { cacheHelper } from '../cache-helper'
-import { convertSlugToCodename } from '../kentico-cloud/helpers'
+import { convertSlugToCodename } from '../kontent/helpers'
 
 const AUTHOR_TYPE = 'author'
 

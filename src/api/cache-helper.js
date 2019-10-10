@@ -1,4 +1,4 @@
-import { deliveryClient } from './kentico-cloud/delivery-client'
+import { deliveryClient } from './kontent/delivery-client'
 
 class CacheHelper {
   cache = {}
@@ -12,7 +12,7 @@ class CacheHelper {
       const configuration = await deliveryClient
         .items()
         .withUrl(QueryUrl)
-        .getPromise()
+        .toPromise()
 
       this.cache[QueryUrl] = configuration
 
@@ -28,7 +28,7 @@ class CacheHelper {
       const configuration = await deliveryClient
         .taxonomy('unused')
         .withUrl(QueryUrl)
-        .getPromise()
+        .toPromise()
 
       this.cache[QueryUrl] = configuration
 

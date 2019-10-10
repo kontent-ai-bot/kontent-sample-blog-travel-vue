@@ -1,5 +1,5 @@
 
-import { ContentItem } from 'kentico-cloud-delivery'
+import { ContentItem } from '@kentico/kontent-delivery'
 import { convertCodenameToSlug, getFeatureImage, flattenTaxonomyTerm } from '../helpers'
 
 export class TaxonomyDetails extends ContentItem {
@@ -32,9 +32,9 @@ export function flatten (item) {
   return {
     id: item.system.id,
     codename: item.system.codename,
-    title: item.frontMatterTitle.text,
+    title: item.frontMatterTitle.value,
     slug: activity ? activity.slug : '',
-    description: item.description.text,
+    description: item.description.value,
     featureImageUrl
   }
 }

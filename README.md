@@ -1,6 +1,6 @@
-# Kentico Cloud Sample: VueJS Travel Blog
+# Kentico Kontent Sample: VueJS Travel Blog
 
-[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-cloud)
+[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
 
 ## VueJS Project setup
 ```
@@ -22,7 +22,7 @@ npm run build
 npm run lint
 ```
 
-# Kentico Cloud Setup
+# Kentico Kontent Setup
 
 ## Content Modeling
 
@@ -69,4 +69,4 @@ There are eight content types defined for this project. The `types.json` in the 
 
 ## Sample Content
 
-An export from Kentico Cloud of sample content using the   content types defined above can be found in the `sample-data` folder in the `items.json` file. Similarly, you can find an export of the taxonomies in the `taxonomies.json` file.
+An export from Kentico Kontent of sample content using the content types defined above can be found in the `sample-data` folder in the `items.json` file. Similarly, you can find an export of the taxonomies in the `taxonomies.json` file.

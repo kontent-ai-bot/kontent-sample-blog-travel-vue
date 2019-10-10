@@ -1,5 +1,5 @@
 
-import { ContentItem, ImageUrlBuilder } from 'kentico-cloud-delivery'
+import { ContentItem, ImageUrlBuilder } from '@kentico/kontent-delivery'
 import { getFirstAssetUrl, convertCodenameToSlug } from '../helpers'
 
 export class Author extends ContentItem {
@@ -30,7 +30,7 @@ export class Author extends ContentItem {
 export function flatten (item) {
   if (!item) return null
 
-  let avatarUrl = getFirstAssetUrl(item.avatar.assets)
+  let avatarUrl = getFirstAssetUrl(item.avatar.value)
   if (avatarUrl) {
     const imageUrlBuilder = new ImageUrlBuilder(avatarUrl)
       .withWidth(100)

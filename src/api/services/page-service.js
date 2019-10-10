@@ -1,5 +1,5 @@
-import { deliveryClient } from '../kentico-cloud/delivery-client'
-import { flatten } from '../kentico-cloud/models/page'
+import { deliveryClient } from '../kontent/delivery-client'
+import { flatten } from '../kontent/models/page'
 import { cacheHelper } from '../cache-helper'
 
 const PAGE_TYPE = 'page'
