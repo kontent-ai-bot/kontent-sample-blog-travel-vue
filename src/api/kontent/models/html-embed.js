@@ -5,7 +5,7 @@ export class HtmlEmbed extends ContentItem {
   constructor () {
     super({
       richTextResolver: (htmlEmbed) => {
-        return htmlEmbed.embedCode.text
+        return htmlEmbed.embedCode.value
       },
       propertyResolver: (fieldName) => {
         if (fieldName === 'embed_code') {

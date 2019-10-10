@@ -30,7 +30,7 @@ export function flattenTaxonomyTerm (term) {
 }
 
 export function getFeatureImage (item) {
-  let featureImageUrl = getFirstAssetUrl(item.frontMatterFeatureImage.assets)
+  let featureImageUrl = getFirstAssetUrl(item.frontMatterFeatureImage.value)
   if (featureImageUrl) {
     const imageUrlBuilder = new ImageUrlBuilder(featureImageUrl)
       .withWidth(1920)

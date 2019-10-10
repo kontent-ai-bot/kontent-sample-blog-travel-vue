@@ -39,10 +39,10 @@ export function flatten (item) {
     title: item.frontMatterTitle.value,
     featureImageUrl,
     slug: item.slug.value,
-    excerpt: item.excerpt.text,
-    published: item.published.datetime,
-    authors: item.authors.map(flattenAuthor),
-    activities: item.activities.taxonomyTerms.map(flattenTaxonomyTerm),
+    excerpt: item.excerpt.value,
+    published: item.published.value,
+    authors: item.authors.value.map(flattenAuthor),
+    activities: item.activities.value.map(flattenTaxonomyTerm),
     body: item.body.resolveHtml()
   }
 }

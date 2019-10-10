@@ -32,9 +32,9 @@ export function flatten (item) {
   return {
     id: item.system.id,
     codename: item.system.codename,
-    title: item.frontMatterTitle.text,
+    title: item.frontMatterTitle.value,
     slug: activity ? activity.slug : '',
-    description: item.description.text,
+    description: item.description.value,
     featureImageUrl
   }
 }

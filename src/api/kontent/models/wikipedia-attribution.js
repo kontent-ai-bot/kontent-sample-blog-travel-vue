@@ -14,7 +14,7 @@ export class WikipediaAttribution extends ContentItem {
         return fieldName
       },
       richTextResolver: (wikipediaAttribution) => {
-        return `<div class="wikipedia-citation">&quot;<a href="${wikipediaAttribution.sourceUrl.text}">${wikipediaAttribution.sourceTitle.text}</a>&quot;, used under <a href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">CC BY-SA 3.0</a>. / Shortened or lightly edited from original</div>`
+        return `<div class="wikipedia-citation">&quot;<a href="${wikipediaAttribution.sourceUrl.value}">${wikipediaAttribution.sourceTitle.value}</a>&quot;, used under <a href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">CC BY-SA 3.0</a>. / Shortened or lightly edited from original</div>`
       }
     })
   }

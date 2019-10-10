@@ -30,7 +30,7 @@ export class Author extends ContentItem {
 export function flatten (item) {
   if (!item) return null
 
-  let avatarUrl = getFirstAssetUrl(item.avatar.assets)
+  let avatarUrl = getFirstAssetUrl(item.avatar.value)
   if (avatarUrl) {
     const imageUrlBuilder = new ImageUrlBuilder(avatarUrl)
       .withWidth(100)
