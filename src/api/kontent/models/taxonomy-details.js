@@ -1,5 +1,5 @@
 
-import { ContentItem } from 'kentico-cloud-delivery'
+import { ContentItem } from '@kentico/kontent-delivery'
 import { convertCodenameToSlug, getFeatureImage, flattenTaxonomyTerm } from '../helpers'
 
 export class TaxonomyDetails extends ContentItem {

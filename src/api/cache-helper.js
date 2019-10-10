@@ -1,4 +1,4 @@
-import { deliveryClient } from './kentico-cloud/delivery-client'
+import { deliveryClient } from './kontent/delivery-client'
 
 class CacheHelper {
   cache = {}

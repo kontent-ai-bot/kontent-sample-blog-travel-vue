@@ -1,4 +1,4 @@
-import { ContentItem } from 'kentico-cloud-delivery'
+import { ContentItem } from '@kentico/kontent-delivery'
 import { flatten as flattenAuthor } from './author'
 import { getFeatureImage, flattenTaxonomyTerm } from '../helpers'
 

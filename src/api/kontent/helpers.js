@@ -1,4 +1,4 @@
-import { ImageUrlBuilder } from 'kentico-cloud-delivery'
+import { ImageUrlBuilder } from '@kentico/kontent-delivery'
 
 export function convertCodenameToSlug (codename) {
   if (!codename) return null

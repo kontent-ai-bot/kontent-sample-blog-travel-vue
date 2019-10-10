@@ -1,9 +1,9 @@
-import { deliveryClient } from '../kentico-cloud/delivery-client'
-import { flatten } from '../kentico-cloud/models/post'
+import { deliveryClient } from '../kontent/delivery-client'
+import { flatten } from '../kontent/models/post'
 import { cacheHelper } from '../cache-helper'
-import { ensureArrayOfCodenames } from '../kentico-cloud/helpers'
+import { ensureArrayOfCodenames } from '../kontent/helpers'
 
-import { SortOrder } from 'kentico-cloud-delivery'
+import { SortOrder } from '@kentico/kontent-delivery'
 
 const POST_TYPE = 'post'
 

@@ -1,6 +1,6 @@
 
 import { getFeatureImage } from '../helpers'
-import { ContentItem } from 'kentico-cloud-delivery'
+import { ContentItem } from '@kentico/kontent-delivery'
 
 export class Page extends ContentItem {
   constructor () {

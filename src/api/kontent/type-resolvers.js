@@ -1,4 +1,4 @@
-import { TypeResolver } from 'kentico-cloud-delivery'
+import { TypeResolver } from '@kentico/kontent-delivery'
 import { Author } from './models/author'
 import { Configuration } from './models/configuration'
 import { HtmlEmbed } from './models/html-embed'

@@ -1,7 +1,7 @@
-import { deliveryClient } from '../kentico-cloud/delivery-client'
-import { flatten } from '../kentico-cloud/models/taxonomy-details'
+import { deliveryClient } from '../kontent/delivery-client'
+import { flatten } from '../kontent/models/taxonomy-details'
 import { cacheHelper } from '../cache-helper'
-import { ensureArrayOfCodenames, flattenTaxonomyTerm } from '../kentico-cloud/helpers'
+import { ensureArrayOfCodenames, flattenTaxonomyTerm } from '../kontent/helpers'
 
 const TAXONOMY_TYPE = 'taxonomy_details'
 

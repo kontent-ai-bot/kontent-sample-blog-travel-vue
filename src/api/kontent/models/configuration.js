@@ -1,5 +1,5 @@
 
-import { ContentItem } from 'kentico-cloud-delivery'
+import { ContentItem } from '@kentico/kontent-delivery'
 import { getFeatureImage } from '../helpers'
 
 export class Configuration extends ContentItem {

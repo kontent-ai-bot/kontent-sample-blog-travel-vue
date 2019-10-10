@@ -1,5 +1,5 @@
 
-import { ContentItem, ImageUrlBuilder } from 'kentico-cloud-delivery'
+import { ContentItem, ImageUrlBuilder } from '@kentico/kontent-delivery'
 import { getFirstAssetUrl, convertCodenameToSlug } from '../helpers'
 
 export class Author extends ContentItem {
