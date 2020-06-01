@@ -1,28 +1,33 @@
 # Kentico Kontent Sample: VueJS Travel Blog
 
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6f3e9e33-79bf-43b8-b327-f54bcf897ff0/deploy-status)](https://app.netlify.com/sites/kontent-sample-app-blog-travel-vue/deploys)
 
 ## VueJS Project setup
-```
+
+```sh
 npm install
 ```
 
 ### Compiles and hot-reloads for development
-```
+
+```sh
 npm run serve
 ```
 
 ### Compiles and minifies for production
-```
+
+```sh
 npm run build
 ```
 
 ### Lints and fixes files
-```
+
+```sh
 npm run lint
 ```
 
-# Kentico Kontent Setup
+## Kentico Kontent Setup
 
 ## Content Modeling
 

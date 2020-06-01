@@ -1,6 +1,7 @@
 [build]
   publish = "dist/"
   command = "npm run build"
+  environment = { VUE_APP_KONTENT_PROJECT_ID = "a056952e-84f3-00ad-5872-394b57a82a13", VUE_APP_KONTENT_BLOG_CONFIGURATION_CODENAME = "blog_configuration" }
   
 # The following redirect is intended for use with most SPAs that handle
 # routing internally.
