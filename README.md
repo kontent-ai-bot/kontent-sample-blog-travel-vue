@@ -78,7 +78,7 @@ There are eight content types defined for this project. The `types.json` in the 
 1. Go to "Project Settings", select API keys and copy
     * Project ID
     * Management API key **require Business tier or higher or Trial account**
-1. Install [Kontent Backup Manager](https://github.com/Kentico/kontent-backup-manager-js) and import data to newly created project from [`kontent-backup.zip`](./kontent-backup.zip) file (place appropriate values for `apiKey` and `projectId` arguments):
+1. Install [Kontent Backup Manager](https://github.com/Kentico/kontent-backup-manager-js) and import data to newly created project from [`kontent-backup-vue-blog.zip`](./kontent-backup-vue-blog.zip) file (place appropriate values for `apiKey` and `projectId` arguments):
 
     ```sh
     npm i -g @kentico/kontent-backup-manager
