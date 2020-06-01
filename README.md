@@ -67,6 +67,22 @@ There are eight content types defined for this project. The `types.json` in the 
   * Source Title - Required
   * Source URL - Required
 
-## Sample Content
+## Create content source
 
-An export from Kentico Kontent of sample content using the content types defined above can be found in the `sample-data` folder in the `items.json` file. Similarly, you can find an export of the taxonomies in the `taxonomies.json` file.
+1. Go to [app.kontent.ai](https://app.kontent.ai) and [create empty project](https://docs.kontent.ai/tutorials/set-up-kontent/projects/manage-projects#a-creating-projects)
+1. Go to "Project Settings", select API keys and copy
+    * Project ID
+    * Management API key **require Business tier or higher or Trial account**
+1. Install [Kontent Backup Manager](https://github.com/Kentico/kontent-backup-manager-js) and import data to newly created project from [`kontent-backup.zip`](./kontent-backup.zip) file (place appropriate values for `apiKey` and `projectId` arguments):
+
+    ```sh
+    npm i -g @kentico/kontent-backup-manager
+
+    kbm --action=restore --apiKey=<Management API key> --projectId=<Project ID> --zipFilename=kontent-backup
+    ```
+
+    > Alternatively, you can use the [Template Manager UI](https://kentico.github.io/kontent-template-manager/import-from-file) for importing the content.
+
+1. Go to your Kontent project and [publish all the imported items](https://docs.kontent.ai/tutorials/write-and-collaborate/publish-your-work/publish-content-items).
+
+![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kontent-sample-blog-travel-vue?pixel)
