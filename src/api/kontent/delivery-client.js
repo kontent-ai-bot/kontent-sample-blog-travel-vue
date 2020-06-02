@@ -6,11 +6,5 @@ export const deliveryClient = new DeliveryClient({
   typeResolvers: ProjectTypeResolvers,
   linkedItemResolver: {
     linkedItemWrapperTag: 'span'
-  },
-  httpInterceptors: {
-    requestInterceptor: (config) => {
-      console.log(`Sending request to: ${config.url}`)
-      return config
-    }
   }
 })
