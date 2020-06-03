@@ -4,6 +4,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6f3e9e33-79bf-43b8-b327-f54bcf897ff0/deploy-status)](https://app.netlify.com/sites/kontent-sample-app-blog-travel-vue/deploys)
 
+![template preview](/template.jpg)
+
 ## Get started
 
 1. install dependencies
