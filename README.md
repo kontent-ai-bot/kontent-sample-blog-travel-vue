@@ -33,7 +33,7 @@
    ```sh
    npm i -g @kentico/kontent-backup-manager
 
-   kbm --action=restore --apiKey=<Management API key> --projectId=<Project ID> --zipFilename=kontent-backup
+   kbm --action=restore --apiKey=<Management API key> --projectId=<Project ID> --zipFilename=kontent-backup-vue-blog
    ```
 
    > Alternatively, you can use the [Template Manager UI](https://kentico.github.io/kontent-template-manager/import-from-file) for importing the content and you could also skip next step, if you select to publish all items after import.
