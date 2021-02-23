@@ -115,4 +115,3 @@ There are eight content types defined for this project. The `types.json` in the 
 
 There is a couple of posts from three authors, categorized via taxonomy.
 
-![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kontent-sample-blog-travel-vue?pixel)
