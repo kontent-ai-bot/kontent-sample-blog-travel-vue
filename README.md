@@ -3,7 +3,7 @@
 [![No Maintenance Intended](https://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 ## :warning: Deprecation Notice
-> This repository has been archived and is no longer maintained. Check out [kontent-sample-app-vue](https://github.com/Kentico/kontent-sample-app-vue) instead.
+> This repository has been archived and is no longer maintained. Check out [sample-app-vue](https://github.com/kontent-ai/sample-app-vue) instead.
 
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
 
